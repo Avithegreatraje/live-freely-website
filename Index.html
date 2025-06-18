@@ -4,50 +4,60 @@
   <!-- Required Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- Title -->
   <title>Live Freely Without Hesitation</title>
 
   <!-- Favicon -->
   <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" type="image/png" />
 
-  <!-- Google Site Verification -->
+  <!-- Google Fonts (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ Google Site Verification -->
   <meta name="google-site-verification" content="Ccm4ti_Il3_-HmYwcXfZLzoMTgUgDwOvUAeuhOLV_dY" />
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Live Freely Without Hesitation is a matchmaking platform for single parents to connect, meet, and find support." />
-  <meta name="keywords" content="single parents, matchmaking, dating, live freely, Avinash Dahat" />
+  <!-- ✅ SEO Meta Tags -->
+  <meta name="description" content="Welcome to Live Freely Without Hesitation — a matchmaking platform for strong and independent single parents." />
+  <meta name="keywords" content="single parent dating, matchmaking, Avinash Dahat, live freely" />
   <meta name="author" content="Avinash Dahat" />
   <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Canonical -->
   <link rel="canonical" href="https://avithegreatraje.github.io/live-freely-website/" />
 
-  <!-- Open Graph Meta Tags -->
+  <!-- ✅ Open Graph Meta Tags -->
   <meta property="og:title" content="Live Freely Without Hesitation" />
-  <meta property="og:description" content="Join our trusted matchmaking platform made for strong, independent single parents." />
+  <meta property="og:description" content="Join a supportive matchmaking platform built just for single parents." />
   <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
   <meta property="og:url" content="https://avithegreatraje.github.io/live-freely-website/" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter Card Meta Tags -->
+  <!-- ✅ Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Live Freely Without Hesitation" />
-  <meta name="twitter:description" content="Matchmaking for single parents. Live freely, connect deeply." />
+  <meta name="twitter:description" content="Find meaningful connections in a respectful community for single parents." />
   <meta name="twitter:image" content="https://i.imgur.com/VyZQYtp.png" />
 
-  <!-- Theme Color -->
+  <!-- ✅ Theme Color for Mobile -->
   <meta name="theme-color" content="#003366" />
 
-  <!-- Structured Data JSON-LD -->
+  <!-- ✅ Structured Data JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Live Freely Without Hesitation",
     "url": "https://avithegreatraje.github.io/live-freely-website/",
-    "description": "A matchmaking website for single parents managed by Avinash Dahat.",
+    "description": "A matchmaking community for single parents to find support and meaningful relationships.",
     "publisher": {
       "@type": "Organization",
-      "name": "Live Freely Without Hesitation",
+      "name": "Avinash Dahat",
       "logo": {
         "@type": "ImageObject",
         "url": "https://i.imgur.com/VyZQYtp.png"
@@ -55,40 +65,41 @@
     }
   }
   </script>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-blue-50 text-gray-800">
 
   <!-- Header / Hero Section -->
   <section class="bg-gradient-to-r from-blue-600 to-green-500 text-white py-12 text-center">
-    <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely Logo" class="mx-auto mb-4 w-36">
+    <img src="https://via.placeholder.com/150x50?text=Live+Freely+Logo" alt="Logo" class="mx-auto mb-4">
     <h1 class="text-4xl font-bold mb-2">Live Freely Without Hesitation</h1>
     <p class="text-lg">The matchmaking community for strong, independent single parents</p>
     <div class="mt-6 space-x-4">
-      <a href="profiles.html" class="bg-white text-blue-700 px-6 py-2 rounded-xl hover:bg-blue-100">Browse Profiles</a>
-      <a href="register.html" class="bg-blue-800 px-6 py-2 rounded-xl hover:bg-blue-900 text-white">Sign Up</a>
+      <a href="register.html">
+        <button class="bg-white text-blue-700 px-6 py-2 rounded-xl hover:bg-blue-100">Login</button>
+      </a>
+      <a href="register.html">
+        <button class="bg-blue-800 px-6 py-2 rounded-xl hover:bg-blue-900">Sign Up</button>
+      </a>
     </div>
   </section>
 
   <!-- Signup Section -->
   <section class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md my-12">
     <h2 class="text-2xl font-semibold mb-4 text-center">Create Your Profile</h2>
-    <form class="space-y-4" action="register.html">
-      <input type="text" placeholder="Full Name" class="w-full p-3 border border-gray-300 rounded-xl" required />
-      <input type="email" placeholder="Email Address" class="w-full p-3 border border-gray-300 rounded-xl" required />
-      <input type="file" accept="image/*" class="w-full p-3 border border-gray-300 rounded-xl" />
-      <input type="file" accept="video/*" class="w-full p-3 border border-gray-300 rounded-xl" />
-      <textarea placeholder="Tell us about yourself..." class="w-full p-3 border border-gray-300 rounded-xl" rows="4" required></textarea>
+    <form class="space-y-4" action="profiles.html">
+      <input type="text" name="name" placeholder="Full Name" required class="w-full p-3 border border-gray-300 rounded-xl"/>
+      <input type="email" name="email" placeholder="Email Address" required class="w-full p-3 border border-gray-300 rounded-xl"/>
+      <input type="file" accept="image/*" class="w-full p-3 border border-gray-300 rounded-xl"/>
+      <input type="file" accept="video/*" class="w-full p-3 border border-gray-300 rounded-xl"/>
+      <textarea placeholder="Tell us about yourself..." name="about" class="w-full p-3 border border-gray-300 rounded-xl" rows="4" required></textarea>
       <button class="bg-green-600 text-white w-full px-6 py-3 rounded-xl hover:bg-green-700">Register</button>
     </form>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-blue-900 text-white text-center py-4 mt-8 text-sm">
-    Owned and managed by Avinash Dahat | © 2025 Live Freely Without Hesitation
+  <footer class="text-center bg-blue-900 text-white py-6 text-sm">
+    <p>© 2025 Live Freely Without Hesitation — Managed by Avinash Dahat</p>
   </footer>
 </body>
 </html>
