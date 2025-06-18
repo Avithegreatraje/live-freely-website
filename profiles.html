@@ -19,32 +19,63 @@
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- ✅ Google Site Verification -->
+  <!-- Google Site Verification -->
   <meta name="google-site-verification" content="Ccm4ti_Il3_-HmYwcXfZLzoMTgUgDwOvUAeuhOLV_dY" />
 
-  <!-- ✅ SEO Meta Tags -->
+  <!-- SEO Meta Tags -->
   <meta name="description" content="Browse verified profiles of single parents on Live Freely Without Hesitation and choose who you’d like to meet." />
   <meta name="keywords" content="single parent profiles, matchmaking, dating, live freely, Avinash Dahat" />
   <meta name="author" content="Avinash Dahat" />
+  <meta name="robots" content="index,follow" />
 
-  <!-- ✅ Open Graph Meta Tags -->
+  <!-- Canonical -->
+  <link rel="canonical" href="https://avithegreatraje.github.io/live-freely-website/profiles.html" />
+
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Browse Profiles - Live Freely Without Hesitation" />
   <meta property="og:description" content="Browse trusted profiles of single parents and request a meeting on our matchmaking platform." />
   <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
   <meta property="og:url" content="https://avithegreatraje.github.io/live-freely-website/profiles.html" />
   <meta property="og:type" content="website" />
 
-  <!-- ✅ Twitter Card Meta Tags -->
+  <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Browse Profiles - Live Freely" />
+  <meta name="twitter:title" content="Browse Profiles - Live Freely Without Hesitation" />
   <meta name="twitter:description" content="Connect with like-minded single parents by browsing verified profiles." />
   <meta name="twitter:image" content="https://i.imgur.com/VyZQYtp.png" />
+
+  <!-- Theme Color for Mobile Browsers -->
+  <meta name="theme-color" content="#003366" />
+
+  <!-- Structured Data JSON-LD for WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Browse Profiles - Live Freely Without Hesitation",
+    "url": "https://avithegreatraje.github.io/live-freely-website/profiles.html",
+    "description": "Browse verified profiles of single parents on Live Freely Without Hesitation and choose who you’d like to meet.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Live Freely Without Hesitation",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://i.imgur.com/VyZQYtp.png"
+      }
+    }
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <header>
+    <!-- Logo placeholder; replace src if you host your own logo -->
+    <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely logo" class="logo" />
     <h1>Live Freely Without Hesitation</h1>
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="register.html">Register</a>
       <a href="profiles.html" class="active">Browse Profiles</a>
@@ -52,29 +83,29 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <h2>Choose a Profile</h2>
 
     <!-- Profile Cards Section -->
     <section class="profiles">
       <h3>Featured Members</h3>
       <div class="profile-grid">
-        <div class="profile-card">
+        <div class="profile-card" tabindex="0">
           <h4>Aarohi, 34</h4>
           <p>Pune | 1 child</p>
           <p>Loves books & coffee dates</p>
         </div>
-        <div class="profile-card">
+        <div class="profile-card" tabindex="0">
           <h4>Ravi, 38</h4>
           <p>Mumbai | 2 kids</p>
           <p>Enjoys trekking & music</p>
         </div>
-        <div class="profile-card">
+        <div class="profile-card" tabindex="0">
           <h4>Meena, 42</h4>
           <p>Nagpur | 1 child</p>
           <p>Passionate about art & long walks</p>
         </div>
-        <div class="profile-card">
+        <div class="profile-card" tabindex="0">
           <h4>Sachin, 36</h4>
           <p>Nashik | 2 kids</p>
           <p>Loves cricket and weekend cooking</p>
@@ -85,15 +116,19 @@
     <!-- Profile Selection Form -->
     <section class="profile-select">
       <h3>Schedule a Meeting</h3>
-      <form action="schedule.html">
-        <label for="selectedProfile">Select a profile to meet:</label><br />
+      <!--
+        To capture the selected profile, you could add JS: when a .profile-card is clicked, set the select value.
+        For now, this form redirects to schedule.html with the chosen profile.
+      -->
+      <form action="schedule.html" method="GET">
+        <label for="selectedProfile">Select a profile to meet:</label>
         <select name="selectedProfile" id="selectedProfile" required>
           <option value="">-- Choose a Profile --</option>
           <option value="aarohi">Aarohi, 34, Pune</option>
           <option value="ravi">Ravi, 38, Mumbai</option>
           <option value="meena">Meena, 42, Nagpur</option>
           <option value="sachin">Sachin, 36, Nashik</option>
-        </select><br /><br />
+        </select>
         <button type="submit">Request a Meeting</button>
       </form>
     </section>
