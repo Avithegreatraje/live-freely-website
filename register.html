@@ -118,6 +118,42 @@
         </label>
       </div>
 
+      <!-- Profile Type Dropdown -->
+      <label for="profileType">Profile Type:
+        <select id="profileType" name="profileType" required>
+          <option value="">-- Select --</option>
+          <option value="single">Single</option>
+          <option value="single_parent">Single Parent</option>
+          <option value="married_friendship">Married - Looking for Friendship</option>
+        </select>
+      </label>
+
+      <!-- Additional Fields -->
+      <label for="education">Education:
+        <input type="text" id="education" name="education" required />
+      </label>
+
+      <label for="qualification">Qualification:
+        <input type="text" id="qualification" name="qualification" required />
+      </label>
+
+      <label for="perm_address">Permanent Address:
+        <textarea id="perm_address" name="perm_address" required></textarea>
+      </label>
+
+      <label for="temp_address">Temporary Address:
+        <textarea id="temp_address" name="temp_address"></textarea>
+      </label>
+
+      <label for="job_status">Job/Business:
+        <select id="job_status" name="job_status" required>
+          <option value="">-- Select --</option>
+          <option value="job">Job</option>
+          <option value="business">Business</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+
       <label for="about">About You:
         <textarea id="about" name="about" required></textarea>
       </label>
@@ -144,20 +180,20 @@
       const gender = genderSelect.value;
       const isDivyang = divyangSelect.value === 'yes';
       interestContainer.style.display = 'block';
-      interestedIn.innerHTML = '<option value=\"\">-- Select --</option>';
+      interestedIn.innerHTML = '<option value="">-- Select --</option>';
 
       if (isDivyang) {
         interestedIn.innerHTML += `
-          <option value=\"normal_male\">Male</option>
-          <option value=\"normal_female\">Female</option>
-          <option value=\"divyang_male\">Divyang Male</option>
-          <option value=\"divyang_female\">Divyang Female</option>
-          <option value=\"transgender\">Transgender</option>`;
+          <option value="normal_male">Male</option>
+          <option value="normal_female">Female</option>
+          <option value="divyang_male">Divyang Male</option>
+          <option value="divyang_female">Divyang Female</option>
+          <option value="transgender">Transgender</option>`;
       } else {
         interestedIn.innerHTML += `
-          <option value=\"male\">Male</option>
-          <option value=\"female\">Female</option>
-          <option value=\"transgender\">Transgender</option>`;
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="transgender">Transgender</option>`;
       }
     }
 
