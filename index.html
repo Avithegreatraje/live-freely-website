@@ -66,6 +66,9 @@
         return;
       }
 
+      // Save selected option to localStorage
+      localStorage.setItem("selectedUserType", selected);
+
       let hText = "";
       let mText = "";
       let regLink = "register.html";
@@ -91,6 +94,15 @@
       section.style.display = "block";
       document.querySelector(".profile-select").style.display = "none";
     }
+
+    // Load previous selection on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      const previous = localStorage.getItem("selectedUserType");
+      if (previous) {
+        document.getElementById("userTypeSelect").value = previous;
+        continueToSite();
+      }
+    });
   </script>
 </body>
 </html>
