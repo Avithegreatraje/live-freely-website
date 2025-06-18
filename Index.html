@@ -10,14 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Google Site Verification -->
-  <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
-
-  <!-- SEO -->
+  <!-- SEO & Verification -->
   <meta name="description" content="A matchmaking platform for singles, single parents, and others seeking genuine connections." />
   <meta name="keywords" content="matchmaking, single parents, live freely, find love, friendship" />
   <meta name="author" content="Avinash Dahat" />
   <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
   <meta property="og:title" content="Live Freely Without Hesitation" />
   <meta property="og:description" content="Find genuine connections whether you're single, a single parent, or seeking friendship." />
   <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
@@ -109,21 +107,19 @@
       const pass = document.getElementById("loginPassword").value.trim();
       const message = document.getElementById("loginMessage");
 
+      const ownerEmail = "avithegreatraje143@gmail.com";
+      const ownerPhone = "8888531094";
+      const ownerPassword = "owner123";
+
       if (!id || !pass) {
         message.textContent = "Both fields are required.";
         return;
       }
 
-      // Owner login credentials
-      const ownerEmail = "avithegreatraje143@gmail.com";
-      const ownerPhone = "8888531094";
-      const ownerPassword = "admin@123"; // You can change it later
-
       if ((id === ownerEmail || id === ownerPhone) && pass === ownerPassword) {
-        window.location.href = "admin.html"; // This will be your inbox/dashboard page
+        window.location.href = "owner-inbox.html";
       } else {
-        // For now, just redirect users to their profile (simulate)
-        window.location.href = "profile.html";
+        window.location.href = "user-profile.html";
       }
     }
   </script>
