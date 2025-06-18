@@ -19,7 +19,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Google Site Verification (UPDATED) -->
+  <!-- Google Site Verification -->
   <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
 
   <!-- SEO Meta Tags -->
@@ -65,7 +65,6 @@
 </head>
 
 <body>
-  <!-- Accessibility Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header>
@@ -83,17 +82,46 @@
     <h2>User Registration</h2>
     <form action="profiles.html" method="GET">
       <label for="name">Name:
-        <input type="text" id="name" name="name" autocomplete="name" required />
+        <input type="text" id="name" name="name" required />
       </label>
+
       <label for="email">Email:
-        <input type="email" id="email" name="email" autocomplete="email" required />
+        <input type="email" id="email" name="email" required />
       </label>
+
       <label for="city">City:
-        <input type="text" id="city" name="city" autocomplete="address-level2" required />
+        <input type="text" id="city" name="city" required />
       </label>
+
+      <label for="gender">Your Gender:
+        <select id="gender" name="gender" required>
+          <option value="">-- Select --</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="transgender">Transgender</option>
+        </select>
+      </label>
+
+      <label for="divyang">Are you Divyang (Differently Abled)?
+        <select id="divyang" name="divyang" required>
+          <option value="">-- Select --</option>
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+      </label>
+
+      <div id="interestContainer" style="display:none;">
+        <label for="interestedIn">Interested In:
+          <select id="interestedIn" name="interestedIn">
+            <option value="">-- Select --</option>
+          </select>
+        </label>
+      </div>
+
       <label for="about">About You:
         <textarea id="about" name="about" required></textarea>
       </label>
+
       <button type="submit">Register & Continue</button>
 
       <p style="font-size: 0.85rem; color: #555; margin-top: 15px;">
@@ -105,5 +133,36 @@
   <footer>
     <p>Owned and managed by Avinash Dahat</p>
   </footer>
+
+  <script>
+    const divyangSelect = document.getElementById('divyang');
+    const genderSelect = document.getElementById('gender');
+    const interestContainer = document.getElementById('interestContainer');
+    const interestedIn = document.getElementById('interestedIn');
+
+    function updateInterestOptions() {
+      const gender = genderSelect.value;
+      const isDivyang = divyangSelect.value === 'yes';
+      interestContainer.style.display = 'block';
+      interestedIn.innerHTML = '<option value=\"\">-- Select --</option>';
+
+      if (isDivyang) {
+        interestedIn.innerHTML += `
+          <option value=\"normal_male\">Male</option>
+          <option value=\"normal_female\">Female</option>
+          <option value=\"divyang_male\">Divyang Male</option>
+          <option value=\"divyang_female\">Divyang Female</option>
+          <option value=\"transgender\">Transgender</option>`;
+      } else {
+        interestedIn.innerHTML += `
+          <option value=\"male\">Male</option>
+          <option value=\"female\">Female</option>
+          <option value=\"transgender\">Transgender</option>`;
+      }
+    }
+
+    divyangSelect.addEventListener('change', updateInterestOptions);
+    genderSelect.addEventListener('change', updateInterestOptions);
+  </script>
 </body>
 </html>
