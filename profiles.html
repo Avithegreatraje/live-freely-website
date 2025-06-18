@@ -16,8 +16,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Site Verification -->
   <meta name="google-site-verification" content="Ccm4ti_Il3_-HmYwcXfZLzoMTgUgDwOvUAeuhOLV_dY" />
@@ -44,10 +44,10 @@
   <meta name="twitter:description" content="Connect with like-minded single parents by browsing verified profiles." />
   <meta name="twitter:image" content="https://i.imgur.com/VyZQYtp.png" />
 
-  <!-- Theme Color for Mobile Browsers -->
+  <!-- Theme Color -->
   <meta name="theme-color" content="#003366" />
 
-  <!-- Structured Data JSON-LD for WebPage -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -67,75 +67,74 @@
   </script>
 </head>
 
-<body>
-  <!-- Skip link for accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <header>
-    <!-- Logo placeholder; replace src if you host your own logo -->
-    <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely logo" class="logo" />
-    <h1>Live Freely Without Hesitation</h1>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="register.html">Register</a>
-      <a href="profiles.html" class="active">Browse Profiles</a>
-      <a href="schedule.html">Schedule Meeting</a>
-    </nav>
+<body class="bg-blue-50 text-gray-800 font-[Montserrat]">
+  <!-- Header -->
+  <header class="bg-blue-800 text-white py-6">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely logo" class="w-12 h-12" />
+        <h1 class="text-2xl font-semibold">Live Freely Without Hesitation</h1>
+      </div>
+      <nav class="mt-4 md:mt-0 space-x-4 text-sm">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="register.html" class="hover:underline">Register</a>
+        <a href="profiles.html" class="underline font-bold">Browse Profiles</a>
+        <a href="schedule.html" class="hover:underline">Schedule Meeting</a>
+      </nav>
+    </div>
   </header>
 
-  <main id="main-content">
-    <h2>Choose a Profile</h2>
+  <!-- Main Content -->
+  <main id="main-content" class="max-w-5xl mx-auto px-4 py-10">
+    <h2 class="text-3xl font-semibold text-center mb-8">Choose a Profile</h2>
 
-    <!-- Profile Cards Section -->
-    <section class="profiles">
-      <h3>Featured Members</h3>
-      <div class="profile-grid">
-        <div class="profile-card" tabindex="0">
-          <h4>Aarohi, 34</h4>
-          <p>Pune | 1 child</p>
-          <p>Loves books & coffee dates</p>
+    <!-- Profile Cards -->
+    <section class="mb-12">
+      <h3 class="text-xl font-semibold mb-4">Featured Members</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-md transition" tabindex="0">
+          <h4 class="text-lg font-bold">Aarohi, 34</h4>
+          <p class="text-sm text-gray-600">Pune | 1 child</p>
+          <p class="mt-2">Loves books & coffee dates</p>
         </div>
-        <div class="profile-card" tabindex="0">
-          <h4>Ravi, 38</h4>
-          <p>Mumbai | 2 kids</p>
-          <p>Enjoys trekking & music</p>
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-md transition" tabindex="0">
+          <h4 class="text-lg font-bold">Ravi, 38</h4>
+          <p class="text-sm text-gray-600">Mumbai | 2 kids</p>
+          <p class="mt-2">Enjoys trekking & music</p>
         </div>
-        <div class="profile-card" tabindex="0">
-          <h4>Meena, 42</h4>
-          <p>Nagpur | 1 child</p>
-          <p>Passionate about art & long walks</p>
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-md transition" tabindex="0">
+          <h4 class="text-lg font-bold">Meena, 42</h4>
+          <p class="text-sm text-gray-600">Nagpur | 1 child</p>
+          <p class="mt-2">Passionate about art & long walks</p>
         </div>
-        <div class="profile-card" tabindex="0">
-          <h4>Sachin, 36</h4>
-          <p>Nashik | 2 kids</p>
-          <p>Loves cricket and weekend cooking</p>
+        <div class="bg-white p-4 rounded-xl shadow hover:shadow-md transition" tabindex="0">
+          <h4 class="text-lg font-bold">Sachin, 36</h4>
+          <p class="text-sm text-gray-600">Nashik | 2 kids</p>
+          <p class="mt-2">Loves cricket and weekend cooking</p>
         </div>
       </div>
     </section>
 
-    <!-- Profile Selection Form -->
-    <section class="profile-select">
-      <h3>Schedule a Meeting</h3>
-      <!--
-        To capture the selected profile, you could add JS: when a .profile-card is clicked, set the select value.
-        For now, this form redirects to schedule.html with the chosen profile.
-      -->
-      <form action="schedule.html" method="GET">
-        <label for="selectedProfile">Select a profile to meet:</label>
-        <select name="selectedProfile" id="selectedProfile" required>
+    <!-- Meeting Request Form -->
+    <section class="bg-white p-6 rounded-xl shadow-md">
+      <h3 class="text-xl font-semibold mb-4">Schedule a Meeting</h3>
+      <form action="schedule.html" method="GET" aria-label="Select a profile and request a meeting" class="space-y-4">
+        <label for="selectedProfile" class="block font-medium">Select a profile to meet:</label>
+        <select name="selectedProfile" id="selectedProfile" required class="w-full p-3 border border-gray-300 rounded-xl">
           <option value="">-- Choose a Profile --</option>
           <option value="aarohi">Aarohi, 34, Pune</option>
           <option value="ravi">Ravi, 38, Mumbai</option>
           <option value="meena">Meena, 42, Nagpur</option>
           <option value="sachin">Sachin, 36, Nashik</option>
         </select>
-        <button type="submit">Request a Meeting</button>
+        <button type="submit" class="bg-blue-800 text-white px-6 py-2 rounded-xl hover:bg-blue-900">Request a Meeting</button>
       </form>
     </section>
   </main>
 
-  <footer>
-    <p>Owned and managed by Avinash Dahat</p>
+  <!-- Footer -->
+  <footer class="text-center bg-blue-900 text-white py-6 text-sm">
+    <p>© 2025 Live Freely Without Hesitation — Managed by Avinash Dahat</p>
   </footer>
 </body>
 </html>
