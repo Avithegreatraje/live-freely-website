@@ -1,121 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profiles - Live Freely Without Hesitation</title>
 
-  <title>Browse Profiles - Live Freely Without Hesitation</title>
+  <!-- SEO & Verification -->
+  <meta name="description" content="Browse profiles and request a meeting with someone you're interested in." />
+  <meta name="google-site-verification" content="Ccm4ti_Il3_-HmYwcXfZLzoMTgUgDwOvUAeuhOLV_dY" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" type="image/png" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- ✅ Updated Google Site Verification -->
-  <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Explore single parent profiles and find your potential match on Live Freely Without Hesitation." />
-  <meta name="keywords" content="single parents matchmaking, profile browsing, find match, live freely" />
-  <meta name="author" content="Avinash Dahat" />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://avithegreatraje.github.io/live-freely-website/profiles.html" />
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Browse Profiles - Live Freely Without Hesitation" />
-  <meta property="og:description" content="Meet like-minded single parents. Browse detailed profiles and choose to connect." />
-  <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
-  <meta property="og:url" content="https://avithegreatraje.github.io/live-freely-website/profiles.html" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Browse Profiles - Live Freely Without Hesitation" />
-  <meta name="twitter:description" content="Find your match from our curated list of single parent profiles." />
-  <meta name="twitter:image" content="https://i.imgur.com/VyZQYtp.png" />
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Browse Profiles - Live Freely Without Hesitation",
-    "url": "https://avithegreatraje.github.io/live-freely-website/profiles.html",
-    "description": "Explore single parent profiles and connect with potential matches on a trusted platform.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Live Freely Without Hesitation",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://i.imgur.com/VyZQYtp.png"
-      }
+  <link rel="icon" href="https://i.imgur.com/lD0J0wF.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #e6f0ff;
+      margin: 0;
+      padding: 2rem;
     }
-  }
-  </script>
+
+    .form-box {
+      background: white;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #003366;
+      text-align: center;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #00509e;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #003366;
+    }
+  </style>
 </head>
-
 <body>
-  <!-- Accessibility Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header>
-    <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely Logo" class="logo" />
-    <h1>Live Freely Without Hesitation</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="register.html">Register</a>
-      <a href="profiles.html" class="active">Browse Profiles</a>
-      <a href="schedule.html">Schedule Meeting</a>
-    </nav>
-  </header>
+  <div class="form-box">
+    <h2>Request a Meeting</h2>
+    <form id="meetingForm">
+      <input type="text" id="userName" placeholder="Your Name" required />
+      <input type="text" id="userState" placeholder="Your State" required />
+      <input type="date" id="meetDate" required />
+      <input type="time" id="meetTime" required />
+      <input type="text" id="meetPlace" placeholder="Meeting Place" required />
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
 
-  <main id="main-content">
-    <h2>Available Profiles</h2>
-    <div class="profile-grid">
-      <!-- Sample Profile Card -->
-      <div class="profile-card">
-        <h4>Riya, 34</h4>
-        <p>City: Mumbai</p>
-        <p>About: A working mom who loves reading and long walks. Looking for someone kind and genuine.</p>
-      </div>
-      <div class="profile-card">
-        <h4>Amit, 37</h4>
-        <p>City: Pune</p>
-        <p>About: Passionate about music and a proud father. Searching for meaningful companionship.</p>
-      </div>
-      <div class="profile-card">
-        <h4>Neha, 31</h4>
-        <p>City: Delhi</p>
-        <p>About: Enjoys gardening and community events. Wants to meet someone understanding and fun-loving.</p>
-      </div>
-      <!-- Add more profiles as needed -->
-    </div>
+  <script>
+    document.getElementById('meetingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    <div class="profile-select">
-      <h3>Ready to Meet Someone?</h3>
-      <p>Choose a profile and schedule a meeting:</p>
-      <form action="schedule.html" method="GET">
-        <label for="selected-profile">Select Profile:</label>
-        <select id="selected-profile" name="profile" required>
-          <option value="">-- Choose --</option>
-          <option value="Riya">Riya</option>
-          <option value="Amit">Amit</option>
-          <option value="Neha">Neha</option>
-        </select>
-        <button type="submit">Schedule Meeting</button>
-      </form>
-    </div>
-  </main>
+      const request = {
+        name: document.getElementById('userName').value.trim(),
+        state: document.getElementById('userState').value.trim(),
+        date: document.getElementById('meetDate').value,
+        time: document.getElementById('meetTime').value,
+        place: document.getElementById('meetPlace').value.trim()
+      };
 
-  <footer>
-    <p>Owned and managed by Avinash Dahat</p>
-  </footer>
+      let requests = JSON.parse(localStorage.getItem('meetingRequests') || '[]');
+      requests.push(request);
+      localStorage.setItem('meetingRequests', JSON.stringify(requests));
+
+      alert("Your meeting request has been sent!");
+      document.getElementById('meetingForm').reset();
+    });
+  </script>
+
 </body>
 </html>
