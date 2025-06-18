@@ -1,146 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Title and Favicon -->
   <title>Login - Live Freely Without Hesitation</title>
-  <link rel="icon" href="https://i.imgur.com/uE8qE5N.png" />
-
-  <!-- SEO and Verification -->
-  <meta name="description" content="Login to connect with single parents and build meaningful relationships.">
-  <meta name="keywords" content="login, matchmaking, single parents, relationships, owner login">
-  <meta name="author" content="Avinash Dahat">
-  <meta name="google-site-verification" content="Ccm4ti_Il3_-HmYwcXfZLzoMTgUgDwOvUAeuhOLV_dY" />
-
-  <!-- Font -->
+  <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
-
-  <!-- Styles -->
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: #f4f7fa;
+      background-color: #e6f0ff;
       margin: 0;
       padding: 0;
     }
-
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .container {
+    .login-container {
       max-width: 400px;
-      margin: 40px auto;
-      background: white;
+      margin: 60px auto;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-
     h2 {
       text-align: center;
       color: #003366;
     }
-
-    input[type="text"],
-    input[type="password"] {
+    input {
       width: 100%;
       padding: 12px;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 8px;
     }
-
     button {
-      width: 100%;
       background-color: #00509e;
       color: white;
       padding: 12px;
       border: none;
+      width: 100%;
       border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
     }
-
     button:hover {
-      background-color: #003366;
+      background-color: #003f7f;
     }
-
-    .note {
+    .error {
+      color: red;
       text-align: center;
-      font-size: 14px;
-      margin-top: 15px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #003366;
-      color: white;
-      margin-top: 40px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
+
 <body>
-
-  <header>
-    <h1>Login to Your Account</h1>
-  </header>
-
-  <div class="container">
-    <h2>Welcome Back</h2>
-    <form id="loginForm">
-      <label for="email">Email or Phone:</label>
-      <input type="text" id="email" name="email" placeholder="Enter email or phone" required />
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" placeholder="Enter password" required />
-
+  <div class="login-container">
+    <h2>Login</h2>
+    <div class="error" id="error-message"></div>
+    <form id="login-form">
+      <input type="text" id="emailOrPhone" placeholder="Email or Phone" required />
+      <input type="password" id="password" placeholder="Password" required />
       <button type="submit">Login</button>
     </form>
-    <p class="note">Don't have an account? <a href="registration.html">Register here</a></p>
   </div>
 
-  <footer>
-    &copy; 2025 Live Freely Without Hesitation. All rights reserved.
-  </footer>
-
-  <!-- Script -->
   <script>
-    document.getElementById('loginForm').addEventListener('submit', function (e) {
+    document.getElementById("login-form").addEventListener("submit", function (e) {
       e.preventDefault();
+      const emailOrPhone = document.getElementById("emailOrPhone").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const error = document.getElementById("error-message");
 
-      const emailInput = document.getElementById('email').value.trim().toLowerCase();
-      const password = document.getElementById('password').value.trim();
+      const ownerEmail = "avithegreatraje143@gmail.com";
+      const ownerPhone = "8888531094";
+      const ownerPassword = "owner123";
 
-      const ownerEmail = 'avithegreatraje143@gmail.com';
-      const ownerPhone = '8888531094';
-      const ownerPassword = 'admin@123';
-
-      if ((emailInput === ownerEmail || emailInput === ownerPhone)) {
-        if (password === ownerPassword) {
-          alert("Owner login successful!");
-          window.location.href = "owner-inbox.html";
-        } else {
-          alert("Incorrect password for owner account.");
-        }
+      if ((emailOrPhone === ownerEmail || emailOrPhone === ownerPhone) && password === ownerPassword) {
+        window.location.href = "owner-inbox.html";
+      } else if (emailOrPhone && password) {
+        window.location.href = "user-profile.html";
       } else {
-        if (password !== '') {
-          alert("User login successful!");
-          window.location.href = "user-dashboard.html";
-        } else {
-          alert("Invalid login. Please enter a password.");
-        }
+        error.textContent = "Invalid login. Please try again.";
       }
     });
   </script>
-
 </body>
 </html>
