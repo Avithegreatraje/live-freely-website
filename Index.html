@@ -1,79 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ... (unchanged head content exactly as you provided) ... -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="Ccm4ti_Il3_-HmYwcXfZLzoMTgUgDwOvUAeuhOLV_dY" />
+  <meta name="description" content="Connect with singles, single parents, or like-minded individuals. Live Freely Without Hesitation is a safe matchmaking site for meaningful connections." />
+  <meta name="keywords" content="matchmaking, single parents, singles, marriage, relationship, transgender, divyang, love" />
+  <meta name="author" content="Avinash Dahat" />
+  <title>Live Freely Without Hesitation</title>
+  <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- Accessibility Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header>
-    <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely Logo" class="logo" />
-    <h1>Live Freely Without Hesitation</h1>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="register.html">Register</a>
-      <a href="profiles.html">Browse Profiles</a>
-      <a href="schedule.html">Schedule Meeting</a>
-    </nav>
-  </header>
+  <header>
+    <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely Logo" class="logo" />
+    <h1>Live Freely Without Hesitation</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="register.html">Register</a>
+      <a href="profiles.html">Browse Profiles</a>
+      <a href="schedule.html">Schedule Meeting</a>
+    </nav>
+  </header>
 
-  <main id="main-content">
-    <section class="profile-select">
-      <h2>Select Your Relationship Type</h2>
-      <p>Please select your purpose to proceed:</p>
-      <select id="userTypeSelect">
-        <option value="">-- Choose an option --</option>
-        <option value="single">Single</option>
-        <option value="singleParent">Single Parent</option>
-        <option value="married">Married Looking for Friendship</option>
-      </select>
-      <button onclick="continueToSite()">Continue</button>
-    </section>
+  <main id="main-content">
+    <section class="profile-select">
+      <h2>Select Your Relationship Type</h2>
+      <p>Please select your purpose to proceed:</p>
+      <select id="userTypeSelect">
+        <option value="">-- Choose an option --</option>
+        <option value="single">Single</option>
+        <option value="singleParent">Single Parent</option>
+        <option value="married">Married Looking for Friendship</option>
+        <option value="transgender">Transgender</option>
+      </select>
+      <button onclick="continueToSite()">Continue</button>
+    </section>
 
-    <section id="customMessage" style="display:none;">
-      <h2 id="welcomeHeading"></h2>
-      <p id="welcomeMessage"></p>
-      <a href="register.html"><button>Register Now</button></a>
-    </section>
-  </main>
+    <section id="customMessage" style="display:none;">
+      <h2 id="welcomeHeading"></h2>
+      <p id="welcomeMessage"></p>
+      <a id="registerLink" href="register.html"><button>Register Now</button></a>
+    </section>
+  </main>
 
-  <footer>
-    <p>Owned and managed by Avinash Dahat</p>
-  </footer>
+  <footer>
+    <p>Owned and managed by Avinash Dahat</p>
+  </footer>
 
-  <script>
-    function continueToSite() {
-      const selected = document.getElementById("userTypeSelect").value;
-      const heading = document.getElementById("welcomeHeading");
-      const message = document.getElementById("welcomeMessage");
-      const section = document.getElementById("customMessage");
+  <script>
+    function continueToSite() {
+      const selected = document.getElementById("userTypeSelect").value;
+      const heading = document.getElementById("welcomeHeading");
+      const message = document.getElementById("welcomeMessage");
+      const section = document.getElementById("customMessage");
+      const registerLink = document.getElementById("registerLink");
 
-      if (!selected) {
-        alert("Please select an option to proceed.");
-        return;
-      }
+      if (!selected) {
+        alert("Please select an option to proceed.");
+        return;
+      }
 
-      let hText = "";
-      let mText = "";
+      let hText = "";
+      let mText = "";
+      let regLink = "register.html";
 
-      if (selected === "single") {
-        hText = "Welcome, Singles!";
-        mText = "Find real connections and start a new journey with someone who truly understands you.";
-      } else if (selected === "singleParent") {
-        hText = "Welcome to the Matchmaking Site for Single Parents";
-        mText = "Live Freely Without Hesitation is a platform designed to connect single parents who are ready to start a new chapter in life. Here, you can find like-minded individuals who value love, family, and companionship.";
-      } else if (selected === "married") {
-        hText = "Connect Respectfully, Privately, and Honestly";
-        mText = "This space is for married individuals looking for friendship and respectful conversation — safely and discreetly.";
-      }
+      if (selected === "single") {
+        hText = "Welcome, Singles!";
+        mText = "Find real connections and start a new journey with someone who truly understands you.";
+      } else if (selected === "singleParent") {
+        hText = "Welcome to the Matchmaking Site for Single Parents";
+        mText = "Live Freely Without Hesitation is a platform designed to connect single parents who are ready to start a new chapter in life. Here, you can find like-minded individuals who value love, family, and companionship.";
+      } else if (selected === "married") {
+        hText = "Connect Respectfully, Privately, and Honestly";
+        mText = "This space is for married individuals looking for friendship and respectful conversation — safely and discreetly.";
+      } else if (selected === "transgender") {
+        hText = "Welcome, Transgender Individuals!";
+        mText = "This safe and inclusive space is designed to help you connect freely with others based on your preferences and comfort.";
+        regLink = "trans_register.html";
+      }
 
-      heading.textContent = hText;
-      message.textContent = mText;
-      section.style.display = "block";
-      document.querySelector(".profile-select").style.display = "none";
-    }
-  </script>
+      heading.textContent = hText;
+      message.textContent = mText;
+      registerLink.href = regLink;
+      section.style.display = "block";
+      document.querySelector(".profile-select").style.display = "none";
+    }
+  </script>
 </body>
 </html>
