@@ -1,131 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required Meta Tags -->
+  <!-- Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- SEO Meta -->
-  <meta name="title" content="Login - Live Freely Without Hesitation" />
-  <meta name="description" content="Login to connect with genuine single parents and people looking for serious companionship. Powered by Live Freely Without Hesitation." />
-  <meta name="keywords" content="matchmaking, single parents, relationship, friendship, login, Live Freely Without Hesitation" />
-  <meta name="author" content="Live Freely Without Hesitation" />
+  <!-- Title and Favicon -->
+  <title>Login - Live Freely Without Hesitation</title>
+  <link rel="icon" href="https://i.imgur.com/uE8qE5N.png" />
 
-  <!-- Google Site Verification -->
+  <!-- SEO and Verification -->
+  <meta name="description" content="Login to connect with single parents and build meaningful relationships.">
+  <meta name="keywords" content="login, matchmaking, single parents, relationships, owner login">
+  <meta name="author" content="Avinash Dahat">
   <meta name="google-site-verification" content="Ccm4ti_Il3_-HmYwcXfZLzoMTgUgDwOvUAeuhOLV_dY" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Login - Live Freely Without Hesitation" />
-  <meta property="og:description" content="Start your journey by logging in. Meet like-minded individuals and form real bonds." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com/login.html" />
-  <meta property="og:image" content="https://i.imgur.com/lD0J0wF.png" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://i.imgur.com/lD0J0wF.png" />
-
-  <!-- Title -->
-  <title>Login - Live Freely Without Hesitation</title>
-
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: #e6f0ff;
+      background-color: #f4f7fa;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
     }
 
-    .login-box {
-      background: #ffffff;
-      padding: 2rem;
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      width: 350px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    .login-box h2 {
+    h2 {
       text-align: center;
       color: #003366;
-      margin-bottom: 1.5rem;
     }
 
-    .login-box input {
+    input[type="text"],
+    input[type="password"] {
       width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      font-size: 1rem;
     }
 
-    .login-box button {
+    button {
       width: 100%;
-      padding: 0.8rem;
       background-color: #00509e;
+      color: white;
+      padding: 12px;
       border: none;
       border-radius: 8px;
-      color: #fff;
-      font-size: 1rem;
+      font-size: 16px;
       cursor: pointer;
     }
 
-    .login-box button:hover {
+    button:hover {
       background-color: #003366;
     }
 
     .note {
       text-align: center;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      color: #555;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #003366;
+      color: white;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <div class="login-box">
-    <h2>Login</h2>
+  <header>
+    <h1>Login to Your Account</h1>
+  </header>
+
+  <div class="container">
+    <h2>Welcome Back</h2>
     <form id="loginForm">
-      <input type="text" id="emailOrPhone" placeholder="Email or Phone" required />
-      <input type="password" id="password" placeholder="Password" required />
+      <label for="email">Email or Phone:</label>
+      <input type="text" id="email" name="email" placeholder="Enter email or phone" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required />
+
       <button type="submit">Login</button>
     </form>
-    <div class="note">Owner & Users use same form</div>
+    <p class="note">Don't have an account? <a href="registration.html">Register here</a></p>
   </div>
 
+  <footer>
+    &copy; 2025 Live Freely Without Hesitation. All rights reserved.
+  </footer>
+
+  <!-- Script -->
   <script>
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const emailOrPhone = document.getElementById("emailOrPhone").value.trim();
-      const password = document.getElementById("password").value;
+      const emailInput = document.getElementById('email').value.trim().toLowerCase();
+      const password = document.getElementById('password').value.trim();
 
-      if (password.length < 3) {
-        alert("Please enter a valid password.");
-        return;
-      }
+      const ownerEmail = 'avithegreatraje143@gmail.com';
+      const ownerPhone = '8888531094';
+      const ownerPassword = 'admin@123';
 
-      // Admin credentials check
-      const isOwner = (
-        emailOrPhone === "avithegreatraje143@gmail.com" ||
-        emailOrPhone === "8888531094"
-      );
-
-      if (isOwner) {
-        alert("Welcome Owner! Redirecting to Admin Inbox...");
-        window.location.href = "owner-inbox.html"; // Change this as needed
+      if ((emailInput === ownerEmail || emailInput === ownerPhone)) {
+        if (password === ownerPassword) {
+          alert("Owner login successful!");
+          window.location.href = "owner-inbox.html";
+        } else {
+          alert("Incorrect password for owner account.");
+        }
       } else {
-        alert("Login successful! Redirecting to your profile...");
-        window.location.href = "user-profile.html"; // Change this as needed
+        if (password !== '') {
+          alert("User login successful!");
+          window.location.href = "user-dashboard.html";
+        } else {
+          alert("Invalid login. Please enter a password.");
+        }
       }
     });
   </script>
