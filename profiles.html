@@ -1,51 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Browse Profiles - Live Freely</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Profiles - Live Freely</title>
+  <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Choose a Profile</h1>
+  <header>
+    <h1>Live Freely Without Hesitation</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="profiles.html">Browse Profiles</a>
+      <a href="schedule.html">Schedule Meeting</a>
+    </nav>
+  </header>
 
-  <!-- Profile Cards Section -->
-  <section class="profiles">
-    <h2>Featured Members</h2>
-    <div class="profile-grid">
-      <div class="profile-card">
-        <h3>Aarohi, 34</h3>
-        <p>Pune | 1 child</p>
-        <p>Loves books & coffee dates</p>
-      </div>
-      <div class="profile-card">
-        <h3>Ravi, 38</h3>
-        <p>Mumbai | 2 kids</p>
-        <p>Enjoys trekking & music</p>
-      </div>
-      <div class="profile-card">
-        <h3>Meena, 42</h3>
-        <p>Nagpur | 1 child</p>
-        <p>Passionate about art & long walks</p>
-      </div>
-      <div class="profile-card">
-        <h3>Sachin, 36</h3>
-        <p>Nashik | 2 kids</p>
-        <p>Loves cricket and weekend cooking</p>
-      </div>
-    </div>
-  </section>
+  <main>
+    <h2>Choose a Profile</h2>
 
-  <!-- Profile Selection Form -->
-  <form action="schedule.html">
-    <label for="selectedProfile">Select Profile:</label><br />
-    <select name="selectedProfile" id="selectedProfile">
-      <option value="profile1">Aarohi, 34, Pune</option>
-      <option value="profile2">Ravi, 38, Mumbai</option>
-      <option value="profile3">Meena, 42, Nagpur</option>
-      <option value="profile4">Sachin, 36, Nashik</option>
-    </select><br /><br />
-    <button type="submit">Schedule a Meeting</button>
-  </form>
+    <!-- Profile Cards Section -->
+    <section class="profiles">
+      <h3>Featured Members</h3>
+      <div class="profile-grid">
+        <div class="profile-card">
+          <h4>Aarohi, 34</h4>
+          <p>Pune | 1 child</p>
+          <p>Loves books & coffee dates</p>
+        </div>
+        <div class="profile-card">
+          <h4>Ravi, 38</h4>
+          <p>Mumbai | 2 kids</p>
+          <p>Enjoys trekking & music</p>
+        </div>
+        <div class="profile-card">
+          <h4>Meena, 42</h4>
+          <p>Nagpur | 1 child</p>
+          <p>Passionate about art & long walks</p>
+        </div>
+        <div class="profile-card">
+          <h4>Sachin, 36</h4>
+          <p>Nashik | 2 kids</p>
+          <p>Loves cricket and weekend cooking</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Selection Form -->
+    <section class="profile-select">
+      <h3>Schedule a Meeting</h3>
+      <form action="schedule.html">
+        <label for="selectedProfile">Select a profile to meet:</label><br />
+        <select name="selectedProfile" id="selectedProfile" required>
+          <option value="">-- Choose a Profile --</option>
+          <option value="profile1">Aarohi, 34, Pune</option>
+          <option value="profile2">Ravi, 38, Mumbai</option>
+          <option value="profile3">Meena, 42, Nagpur</option>
+          <option value="profile4">Sachin, 36, Nashik</option>
+        </select><br /><br />
+        <button type="submit">Request a Meeting</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Owned and managed by Avinash Dahat</p>
+  </footer>
 </body>
 </html>
