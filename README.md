@@ -1,4 +1,4 @@
-# Live Freely Without Hesitation 💙
+ # Live Freely Without Hesitation 💙
 
 **A matchmaking website dedicated to single parents**, created and managed by **Avinash Dahat**. This platform helps individuals connect, view profiles, and schedule personal meetings based on mutual preferences.
 
@@ -28,16 +28,25 @@
 
 ## 🚀 Live Demo
 
-[Click to Visit Website](https://avithegreatraje.github.io/live-freely-website/)
+🌐 [Click to Visit Website](https://avithegreatraje.github.io/live-freely-website/)
 
 ---
 
 ## 🛠️ Technologies Used
 
-- HTML5
-- CSS3 (Custom Styling)
-- JavaScript (Basic Alert for form)
+- HTML5  
+- CSS3 (Custom Styling)  
+- JavaScript (Basic Alert for form)  
 - GitHub Pages (Hosting)
+
+---
+
+## 🔎 Google Verification
+
+All website files include this verification code for Google Search Console:
+
+```html
+<meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
 
 ---
 
