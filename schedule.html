@@ -4,15 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Schedule Meeting - Live Freely</title>
+  <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Schedule Your Meeting</h1>
-  <form onsubmit="sendPreferences(event)">
-    <label>Preferred Date: <input type="date" name="date" required /></label><br />
-    <label>Preferred Time: <input type="time" name="time" required /></label><br />
-    <label>Meeting Location:<br /><textarea name="location" required></textarea></label><br />
-    <button type="submit">Submit Preferences</button>
-  </form>
+  <header>
+    <h1>Live Freely Without Hesitation</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="profiles.html">Browse Profiles</a>
+      <a href="schedule.html">Schedule Meeting</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Schedule Your Meeting</h2>
+    <form onsubmit="sendPreferences(event)">
+      <label for="date">Preferred Date:
+        <input type="date" name="date" id="date" required />
+      </label>
+      <label for="time">Preferred Time:
+        <input type="time" name="time" id="time" required />
+      </label>
+      <label for="location">Meeting Location:
+        <textarea name="location" id="location" required></textarea>
+      </label>
+      <button type="submit">Submit Preferences</button>
+
+      <!-- Privacy Note -->
+      <p style="font-size: 0.85rem; color: #555; margin-top: 15px;">
+        🔒 Your meeting preferences will be shared only with the website owner, Avinash Dahat.
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    <p>Owned and managed by Avinash Dahat</p>
+  </footer>
 
   <script>
     function sendPreferences(event) {
