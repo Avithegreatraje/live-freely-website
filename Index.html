@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Required Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title -->
   <title>Live Freely Without Hesitation</title>
+
+  <!-- Favicon -->
   <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" type="image/png" />
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- SEO & Verification -->
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
+
+  <!-- SEO Meta Tags -->
   <meta name="description" content="A matchmaking platform for singles, single parents, and others seeking genuine connections." />
   <meta name="keywords" content="matchmaking, single parents, live freely, find love, friendship" />
   <meta name="author" content="Avinash Dahat" />
   <meta name="robots" content="index, follow" />
-  <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
+
+  <!-- Open Graph Tags -->
   <meta property="og:title" content="Live Freely Without Hesitation" />
   <meta property="og:description" content="Find genuine connections whether you're single, a single parent, or seeking friendship." />
   <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
   <meta property="og:url" content="https://avithegreatraje.github.io/live-freely-website/" />
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
 </head>
 
@@ -107,19 +122,21 @@
       const pass = document.getElementById("loginPassword").value.trim();
       const message = document.getElementById("loginMessage");
 
-      const ownerEmail = "avithegreatraje143@gmail.com";
-      const ownerPhone = "8888531094";
-      const ownerPassword = "owner123";
-
       if (!id || !pass) {
         message.textContent = "Both fields are required.";
         return;
       }
 
+      // Owner login credentials
+      const ownerEmail = "avithegreatraje143@gmail.com";
+      const ownerPhone = "8888531094";
+      const ownerPassword = "admin@123";
+
       if ((id === ownerEmail || id === ownerPhone) && pass === ownerPassword) {
-        window.location.href = "owner-inbox.html";
+        window.location.href = "admin.html";
       } else {
-        window.location.href = "user-profile.html";
+        // Simulated user profile redirection
+        window.location.href = "profile.html";
       }
     }
   </script>
