@@ -19,30 +19,57 @@
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- ✅ Google Site Verification -->
+  <!-- Google Site Verification -->
   <meta name="google-site-verification" content="Ccm4ti_Il3_-HmYwcXfZLzoMTgUgDwOvUAeuhOLV_dY" />
 
-  <!-- ✅ SEO Meta Tags -->
+  <!-- SEO Meta Tags -->
   <meta name="description" content="Register on Live Freely Without Hesitation to begin your matchmaking journey as a single parent." />
   <meta name="keywords" content="register, single parents matchmaking, live freely, Avinash Dahat" />
   <meta name="author" content="Avinash Dahat" />
+  <meta name="robots" content="index,follow" />
 
-  <!-- ✅ Open Graph Meta Tags -->
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://avithegreatraje.github.io/live-freely-website/register.html" />
+
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Register - Live Freely Without Hesitation" />
   <meta property="og:description" content="Join a safe and trusted platform for single parents. Start connecting today." />
   <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
   <meta property="og:url" content="https://avithegreatraje.github.io/live-freely-website/register.html" />
   <meta property="og:type" content="website" />
 
-  <!-- ✅ Twitter Card Meta Tags -->
+  <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Register - Live Freely Without Hesitation" />
   <meta name="twitter:description" content="Start your journey by registering on the matchmaking site for single parents." />
   <meta name="twitter:image" content="https://i.imgur.com/VyZQYtp.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Register - Live Freely Without Hesitation",
+    "url": "https://avithegreatraje.github.io/live-freely-website/register.html",
+    "description": "Register to join the trusted matchmaking platform for single parents.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Live Freely Without Hesitation",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://i.imgur.com/VyZQYtp.png"
+      }
+    }
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <header>
+    <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely Logo" class="logo" />
     <h1>Live Freely Without Hesitation</h1>
     <nav>
       <a href="index.html">Home</a>
@@ -52,24 +79,23 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <h2>User Registration</h2>
-    <form action="profiles.html">
-      <label>Name:
-        <input type="text" name="name" required />
+    <form action="profiles.html" method="GET">
+      <label for="name">Name:
+        <input type="text" id="name" name="name" autocomplete="name" required />
       </label>
-      <label>Email:
-        <input type="email" name="email" required />
+      <label for="email">Email:
+        <input type="email" id="email" name="email" autocomplete="email" required />
       </label>
-      <label>City:
-        <input type="text" name="city" required />
+      <label for="city">City:
+        <input type="text" id="city" name="city" autocomplete="address-level2" required />
       </label>
-      <label>About You:
-        <textarea name="about" required></textarea>
+      <label for="about">About You:
+        <textarea id="about" name="about" required></textarea>
       </label>
       <button type="submit">Register & Continue</button>
 
-      <!-- Privacy Note -->
       <p style="font-size: 0.85rem; color: #555; margin-top: 15px;">
         🔒 Your information will be kept private and secure. We respect your privacy.
       </p>
