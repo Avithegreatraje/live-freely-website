@@ -1,46 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- SEO -->
-  <meta name="title" content="Owner Inbox - Live Freely Without Hesitation" />
+  <title>Owner Inbox - Live Freely Without Hesitation</title>
   <meta name="description" content="Admin inbox panel to view user meeting requests and reply directly as the website owner." />
-  <meta name="keywords" content="admin panel, owner inbox, meeting requests, matchmaking, Live Freely Without Hesitation" />
-  <meta name="author" content="Live Freely Without Hesitation" />
-
-  <!-- Google Site Verification -->
   <meta name="google-site-verification" content="Ccm4ti_Il3_-HmYwcXfZLzoMTgUgDwOvUAeuhOLV_dY" />
 
-  <!-- Title -->
-  <title>Owner Inbox - Live Freely Without Hesitation</title>
-
-  <!-- Favicon -->
   <link rel="icon" href="https://i.imgur.com/lD0J0wF.png" />
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
-
-  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      margin: 0;
       background-color: #f4f7fc;
+      margin: 0;
+      padding: 0;
     }
 
     header {
       background-color: #003366;
       color: white;
-      padding: 1rem;
       text-align: center;
+      padding: 1rem;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 800px;
       margin: 2rem auto;
       background: white;
       border-radius: 10px;
@@ -50,8 +37,8 @@
 
     h2 {
       color: #003366;
-      text-align: center;
       margin-bottom: 1.5rem;
+      text-align: center;
     }
 
     .request {
@@ -64,7 +51,7 @@
     }
 
     .request h4 {
-      margin: 0 0 0.5rem 0;
+      margin: 0 0 0.5rem;
       color: #00509e;
     }
 
@@ -72,18 +59,12 @@
       margin: 0.3rem 0;
     }
 
-    .reply-box {
-      margin-top: 1rem;
-    }
-
     .reply-box textarea {
       width: 100%;
-      height: 60px;
       padding: 0.5rem;
-      font-size: 0.95rem;
+      height: 60px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      resize: none;
     }
 
     .reply-box button {
@@ -102,8 +83,8 @@
 
     .footer {
       text-align: center;
+      color: #999;
       font-size: 0.85rem;
-      color: #888;
       padding: 1rem;
     }
   </style>
@@ -117,38 +98,37 @@
 
 <div class="container">
   <h2>Meeting Requests</h2>
-
-  <!-- Example Request 1 -->
-  <div class="request">
-    <h4>From: Priya (Maharashtra)</h4>
-    <p><strong>Date:</strong> 22 June 2025</p>
-    <p><strong>Time:</strong> 5:00 PM</p>
-    <p><strong>Place:</strong> Café Coffee Day, Pune</p>
-    
-    <div class="reply-box">
-      <textarea placeholder="Type your reply here..."></textarea>
-      <button onclick="alert('Reply sent as Owner!')">Send Reply</button>
-    </div>
-  </div>
-
-  <!-- Example Request 2 -->
-  <div class="request">
-    <h4>From: Rahul (Delhi)</h4>
-    <p><strong>Date:</strong> 24 June 2025</p>
-    <p><strong>Time:</strong> 3:00 PM</p>
-    <p><strong>Place:</strong> Select Citywalk Mall</p>
-    
-    <div class="reply-box">
-      <textarea placeholder="Type your reply here..."></textarea>
-      <button onclick="alert('Reply sent as Owner!')">Send Reply</button>
-    </div>
-  </div>
-
+  <div id="requestsContainer"></div>
 </div>
 
 <div class="footer">
   &copy; 2025 Live Freely Without Hesitation. Admin Panel.
 </div>
+
+<script>
+  const container = document.getElementById('requestsContainer');
+  const requests = JSON.parse(localStorage.getItem('meetingRequests') || '[]');
+
+  if (requests.length === 0) {
+    container.innerHTML = "<p>No meeting requests yet.</p>";
+  } else {
+    requests.forEach((req, index) => {
+      const div = document.createElement('div');
+      div.classList.add('request');
+      div.innerHTML = `
+        <h4>From: ${req.name} (${req.state})</h4>
+        <p><strong>Date:</strong> ${req.date}</p>
+        <p><strong>Time:</strong> ${req.time}</p>
+        <p><strong>Place:</strong> ${req.place}</p>
+        <div class="reply-box">
+          <textarea placeholder="Type your reply here..."></textarea>
+          <button onclick="alert('Reply sent to ${req.name}')">Send Reply</button>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+  }
+</script>
 
 </body>
 </html>
