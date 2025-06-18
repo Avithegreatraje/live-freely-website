@@ -1,72 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Browse Profiles - Live Freely</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Profiles - Live Freely</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Choose a Profile</h1>
-  <section class="profiles">
-  <h2>Featured Members</h2>
-  <div class="profile-grid">
-    <div class="profile-card">
-      <h3>Aarohi, 34</h3>
-      <p>Pune | 1 child</p>
-      <p>Loves books & coffee dates</p>
-    </div>
-    <div class="profile-card">
-      <h3>Ravi, 38</h3>
-      <p>Mumbai | 2 kids</p>
-      <p>Enjoys trekking & music</p>
-    </div>
-    <div class="profile-card">
-      <h3>Meena, 42</h3>
-      <p>Nagpur | 1 child</p>
-      <p>Passionate about art & long walks</p>
-    </div>
-    <div class="profile-card">
-      <h3>Sachin, 36</h3>
-      <p>Nashik | 2 kids</p>
-      <p>Loves cricket and weekend cooking</p>
-    </div>
-  </div>
-</section>
+  <h1>Choose a Profile</h1>
 
-  <form<section class="profiles">
-  <h2>Featured Members</h2>
-  <div class="profile-grid">
-    <div class="profile-card">
-      <h3>Aarohi, 34</h3>
-      <p>Pune | 1 child</p>
-      <p>Loves books & coffee dates</p>
-    </div>
-    <div class="profile-card">
-      <h3>Ravi, 38</h3>
-      <p>Mumbai | 2 kids</p>
-      <p>Enjoys trekking & music</p>
-    </div>
-    <div class="profile-card">
-      <h3>Meena, 42</h3>
-      <p>Nagpur | 1 child</p>
-      <p>Passionate about art & long walks</p>
-    </div>
-    <div class="profile-card">
-      <h3>Sachin, 36</h3>
-      <p>Nashik | 2 kids</p>
-      <p>Loves cricket and weekend cooking</p>
-    </div>
-  </div>
-</section>
- action="schedule.html">
-    <label>Select Profile:
-      <select name="selectedProfile">
-        <option value="profile1">Anita, 35, Mumbai</option>
-        <option value="profile2">Ramesh, 42, Pune</option>
-        <option value="profile3">Sneha, 30, Delhi</option>
-      </select>
-    </label><br />
-    <button type="submit">Schedule a Meeting</button>
-  </form>
+  <!-- Profile Cards Section -->
+  <section class="profiles">
+    <h2>Featured Members</h2>
+    <div class="profile-grid">
+      <div class="profile-card">
+        <h3>Aarohi, 34</h3>
+        <p>Pune | 1 child</p>
+        <p>Loves books & coffee dates</p>
+      </div>
+      <div class="profile-card">
+        <h3>Ravi, 38</h3>
+        <p>Mumbai | 2 kids</p>
+        <p>Enjoys trekking & music</p>
+      </div>
+      <div class="profile-card">
+        <h3>Meena, 42</h3>
+        <p>Nagpur | 1 child</p>
+        <p>Passionate about art & long walks</p>
+      </div>
+      <div class="profile-card">
+        <h3>Sachin, 36</h3>
+        <p>Nashik | 2 kids</p>
+        <p>Loves cricket and weekend cooking</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile Selection Form -->
+  <form action="schedule.html">
+    <label for="selectedProfile">Select Profile:</label><br />
+    <select name="selectedProfile" id="selectedProfile">
+      <option value="profile1">Aarohi, 34, Pune</option>
+      <option value="profile2">Ravi, 38, Mumbai</option>
+      <option value="profile3">Meena, 42, Nagpur</option>
+      <option value="profile4">Sachin, 36, Nashik</option>
+    </select><br /><br />
+    <button type="submit">Schedule a Meeting</button>
+  </form>
 </body>
 </html>
