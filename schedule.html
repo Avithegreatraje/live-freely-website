@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule Meeting - Live Freely</title>
+</head>
+<body>
+  <h1>Schedule Your Meeting</h1>
+  <form onsubmit="sendPreferences(event)">
+    <label>Preferred Date: <input type="date" name="date" required /></label><br />
+    <label>Preferred Time: <input type="time" name="time" required /></label><br />
+    <label>Meeting Location:<br /><textarea name="location" required></textarea></label><br />
+    <button type="submit">Submit Preferences</button>
+  </form>
+
+  <script>
+    function sendPreferences(event) {
+      event.preventDefault();
+      alert("Preferences submitted successfully! Avinash Dahat will contact you soon.");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
