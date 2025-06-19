@@ -1,144 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required Meta Tags -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Title -->
-  <title>Live Freely Without Hesitation</title>
+  <title>Live Freely Without Hesitation</title>
+  <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" type="image/png" />
+  <!-- SEO & Google Verification -->
+  <meta name="description" content="A matchmaking platform for singles, single parents, and others seeking genuine connections." />
+  <meta name="keywords" content="matchmaking, single parents, live freely, find love, friendship" />
+  <meta name="author" content="Avinash Dahat" />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
+  <link rel="canonical" href="https://avithegreatraje.github.io/live-freely-website/" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Live Freely Without Hesitation" />
+  <meta property="og:description" content="Find genuine connections whether you're single, a single parent, or seeking friendship." />
+  <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
+  <meta property="og:url" content="https://avithegreatraje.github.io/live-freely-website/" />
+  <meta property="og:type" content="website" />
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Live Freely Without Hesitation" />
+  <meta name="twitter:description" content="Safe and inclusive matchmaking for singles, single parents, and those seeking genuine friendship." />
+  <meta name="twitter:image" content="https://i.imgur.com/VyZQYtp.png" />
 
-  <!-- Google Site Verification -->
-  <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="A matchmaking platform for singles, single parents, and others seeking genuine connections." />
-  <meta name="keywords" content="matchmaking, single parents, live freely, find love, friendship" />
-  <meta name="author" content="Avinash Dahat" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph Tags -->
-  <meta property="og:title" content="Live Freely Without Hesitation" />
-  <meta property="og:description" content="Find genuine connections whether you're single, a single parent, or seeking friendship." />
-  <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
-  <meta property="og:url" content="https://avithegreatraje.github.io/live-freely-website/" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Live Freely Without Hesitation",
+    "url": "https://avithegreatraje.github.io/live-freely-website",
+    "description": "Matchmaking site for singles, single parents, and friendship seekers.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Live Freely Without Hesitation",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://i.imgur.com/VyZQYtp.png"
+      }
+    }
+  }
+  </script>
 </head>
 
 <body>
-  <header>
-    <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely Logo" class="logo" />
-    <h1>Live Freely Without Hesitation</h1>
-    <button onclick="showLogin()" style="position:absolute; top:15px; right:15px;">Login</button>
-  </header>
+  <header>
+    <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely Logo" class="logo" />
+    <h1>Live Freely Without Hesitation</h1>
+    <button onclick="showLogin()" style="position:absolute; top:15px; right:15px;">Login</button>
+  </header>
 
-  <main>
-    <div class="profile-select">
-      <h2>Select Your Relationship Status</h2>
-      <select id="userTypeSelect">
-        <option value="">-- Choose an Option --</option>
-        <option value="single">Single</option>
-        <option value="singleParent">Single Parent</option>
-        <option value="married">Married Looking for Friendship</option>
-        <option value="transgender">Transgender</option>
-      </select>
-      <button onclick="continueToSite()">Continue</button>
-    </div>
+  <main>
+    <div class="profile-select">
+      <h2>Select Your Relationship Status</h2>
+      <select id="userTypeSelect">
+        <option value="">-- Choose an Option --</option>
+        <option value="single">Single</option>
+        <option value="singleParent">Single Parent</option>
+        <option value="married">Married Looking for Friendship</option>
+        <option value="transgender">Transgender</option>
+      </select>
+      <button onclick="continueToSite()">Continue</button>
+    </div>
 
-    <section id="customMessage" style="display: none;">
-      <h2 id="welcomeHeading"></h2>
-      <p id="welcomeMessage"></p>
-      <a id="registerLink" href="register.html">Register Now</a>
-    </section>
+    <section id="customMessage" style="display: none;">
+      <h2 id="welcomeHeading"></h2>
+      <p id="welcomeMessage"></p>
+      <a id="registerLink" href="register.html">Register Now</a>
+    </section>
 
-    <!-- Login Box -->
-    <div id="loginBox" style="display:none; margin-top: 20px;">
-      <h3>Login</h3>
-      <input type="text" id="loginId" placeholder="Email or Mobile Number" required />
-      <input type="password" id="loginPassword" placeholder="Password" required />
-      <button onclick="login()">Login</button>
-      <p id="loginMessage" style="color: red;"></p>
-    </div>
-  </main>
+    <!-- Login Box -->
+    <div id="loginBox" style="display:none; margin-top: 20px;">
+      <h3>Login</h3>
+      <input type="text" id="loginId" placeholder="Email or Mobile Number" required />
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <button onclick="login()">Login</button>
+      <p id="loginMessage" style="color: red;"></p>
+    </div>
+  </main>
 
-  <footer>
-    <p>Owned and managed by Avinash Dahat</p>
-  </footer>
+  <footer>
+    <p>Owned and managed by Avinash Dahat</p>
+  </footer>
 
-  <script>
-    function continueToSite() {
-      const selected = document.getElementById("userTypeSelect").value;
-      const heading = document.getElementById("welcomeHeading");
-      const message = document.getElementById("welcomeMessage");
-      const section = document.getElementById("customMessage");
-      const registerLink = document.getElementById("registerLink");
+  <script>
+    function continueToSite() {
+      const selected = document.getElementById("userTypeSelect").value;
+      const heading = document.getElementById("welcomeHeading");
+      const message = document.getElementById("welcomeMessage");
+      const section = document.getElementById("customMessage");
+      const registerLink = document.getElementById("registerLink");
 
-      if (!selected) {
-        alert("Please select an option to proceed.");
-        return;
-      }
+      if (!selected) {
+        alert("Please select an option to proceed.");
+        return;
+      }
 
-      let hText = "", mText = "";
+      let hText = "", mText = "";
 
-      if (selected === "single") {
-        hText = "Welcome, Singles!";
-        mText = "Find real connections and start a new journey with someone who truly understands you.";
-      } else if (selected === "singleParent") {
-        hText = "Welcome to the Matchmaking Site for Single Parents";
-        mText = "Live Freely Without Hesitation is a platform designed to connect single parents who are ready to start a new chapter in life.";
-      } else if (selected === "married") {
-        hText = "Connect Respectfully, Privately, and Honestly";
-        mText = "This space is for married individuals looking for friendship and respectful conversation — safely and discreetly.";
-      } else if (selected === "transgender") {
-        hText = "Welcome, Transgender Individuals!";
-        mText = "This safe and inclusive space is designed to help you connect freely with others.";
-        registerLink.href = "trans_register.html";
-      }
+      if (selected === "single") {
+        hText = "Welcome, Singles!";
+        mText = "Find real connections and start a new journey with someone who truly understands you.";
+      } else if (selected === "singleParent") {
+        hText = "Welcome to the Matchmaking Site for Single Parents";
+        mText = "Live Freely Without Hesitation is a platform designed to connect single parents who are ready to start a new chapter in life.";
+      } else if (selected === "married") {
+        hText = "Connect Respectfully, Privately, and Honestly";
+        mText = "This space is for married individuals looking for friendship and respectful conversation — safely and discreetly.";
+      } else if (selected === "transgender") {
+        hText = "Welcome, Transgender Individuals!";
+        mText = "This safe and inclusive space is designed to help you connect freely with others.";
+        registerLink.href = "trans_register.html";
+      }
 
-      heading.textContent = hText;
-      message.textContent = mText;
-      section.style.display = "block";
-    }
+      heading.textContent = hText;
+      message.textContent = mText;
+      section.style.display = "block";
+    }
 
-    function showLogin() {
-      document.getElementById("loginBox").style.display = "block";
-    }
+    function showLogin() {
+      document.getElementById("loginBox").style.display = "block";
+    }
 
-    function login() {
-      const id = document.getElementById("loginId").value.trim();
-      const pass = document.getElementById("loginPassword").value.trim();
-      const message = document.getElementById("loginMessage");
+    function login() {
+      const id = document.getElementById("loginId").value.trim();
+      const pass = document.getElementById("loginPassword").value.trim();
+      const message = document.getElementById("loginMessage");
 
-      if (!id || !pass) {
-        message.textContent = "Both fields are required.";
-        return;
-      }
+      if (!id || !pass) {
+        message.textContent = "Both fields are required.";
+        return;
+      }
 
-      // Owner login credentials
-      const ownerEmail = "avithegreatraje143@gmail.com";
-      const ownerPhone = "8888531094";
-      const ownerPassword = "admin@123";
+      const ownerEmail = "avithegreatraje143@gmail.com";
+      const ownerPhone = "8888531094";
+      const ownerPassword = "admin@123";
 
-      if ((id === ownerEmail || id === ownerPhone) && pass === ownerPassword) {
-        window.location.href = "admin.html";
-      } else {
-        // Simulated user profile redirection
-        window.location.href = "profile.html";
-      }
-    }
-  </script>
+      if ((id === ownerEmail || id === ownerPhone) && pass === ownerPassword) {
+        window.location.href = "admin_dashboard.html";
+      } else {
+        window.location.href = "user_profile.html";
+      }
+    }
+  </script>
 </body>
 </html>
