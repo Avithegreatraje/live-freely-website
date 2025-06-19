@@ -3,132 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <title>Owner Inbox - Live Freely Without Hesitation</title>
-  <meta name="description" content="Admin inbox panel to view user meeting requests and reply directly as the website owner." />
-  <meta name="google-site-verification" content="Ccm4ti_Il3_-HmYwcXfZLzoMTgUgDwOvUAeuhOLV_dY" />
+  <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
 
-  <link rel="icon" href="https://i.imgur.com/lD0J0wF.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #f4f7fc;
-      margin: 0;
-      padding: 0;
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Owner's inbox to view and respond to meeting requests submitted by users." />
+  <meta name="keywords" content="owner inbox, meeting requests, matchmaking admin, Avinash Dahat" />
+  <meta name="author" content="Avinash Dahat" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://avithegreatraje.github.io/live-freely-website/owner-inbox.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Owner Inbox - Live Freely Without Hesitation" />
+  <meta property="og:description" content="Admin view to manage meeting requests submitted by registered users." />
+  <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
+  <meta property="og:url" content="https://avithegreatraje.github.io/live-freely-website/owner-inbox.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Owner Inbox - Live Freely" />
+  <meta name="twitter:description" content="Secure section for the admin to respond to matchmaking requests." />
+  <meta name="twitter:image" content="https://i.imgur.com/VyZQYtp.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Owner Inbox - Live Freely Without Hesitation",
+    "url": "https://avithegreatraje.github.io/live-freely-website/owner-inbox.html",
+    "description": "Admin dashboard for viewing and replying to scheduled meeting requests submitted by users.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Live Freely Without Hesitation",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://i.imgur.com/VyZQYtp.png"
+      }
     }
-
-    header {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      color: #003366;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .request {
-      border-bottom: 1px solid #ddd;
-      padding: 1rem 0;
-    }
-
-    .request:last-child {
-      border-bottom: none;
-    }
-
-    .request h4 {
-      margin: 0 0 0.5rem;
-      color: #00509e;
-    }
-
-    .request p {
-      margin: 0.3rem 0;
-    }
-
-    .reply-box textarea {
-      width: 100%;
-      padding: 0.5rem;
-      height: 60px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .reply-box button {
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      background-color: #00509e;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .reply-box button:hover {
-      background-color: #003366;
-    }
-
-    .footer {
-      text-align: center;
-      color: #999;
-      font-size: 0.85rem;
-      padding: 1rem;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>Owner Inbox</h1>
-  <p>Live Freely Without Hesitation</p>
-</header>
-
-<div class="container">
-  <h2>Meeting Requests</h2>
-  <div id="requestsContainer"></div>
-</div>
-
-<div class="footer">
-  &copy; 2025 Live Freely Without Hesitation. Admin Panel.
-</div>
-
-<script>
-  const container = document.getElementById('requestsContainer');
-  const requests = JSON.parse(localStorage.getItem('meetingRequests') || '[]');
-
-  if (requests.length === 0) {
-    container.innerHTML = "<p>No meeting requests yet.</p>";
-  } else {
-    requests.forEach((req, index) => {
-      const div = document.createElement('div');
-      div.classList.add('request');
-      div.innerHTML = `
-        <h4>From: ${req.name} (${req.state})</h4>
-        <p><strong>Date:</strong> ${req.date}</p>
-        <p><strong>Time:</strong> ${req.time}</p>
-        <p><strong>Place:</strong> ${req.place}</p>
-        <div class="reply-box">
-          <textarea placeholder="Type your reply here..."></textarea>
-          <button onclick="alert('Reply sent to ${req.name}')">Send Reply</button>
-        </div>
-      `;
-      container.appendChild(div);
-    });
   }
-</script>
+  </script>
+</head>
 
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely Logo" class="logo" />
+    <h1>Owner Inbox</h1>
+    <p style="color: white; margin-top: 5px;">Meeting Requests Submitted by Users</p>
+  </header>
+
+  <main id="main-content">
+    <section class="inbox-list">
+      <div class="message-card">
+        <h3>Meeting Request from: Rahul Sharma</h3>
+        <p><strong>Date:</strong> 2025-06-20</p>
+        <p><strong>Time:</strong> 5:00 PM</p>
+        <p><strong>Location:</strong> Cafe Coffee Day, Bhopal</p>
+        <label for="reply1">Reply:</label>
+        <textarea id="reply1" placeholder="Type your response here..."></textarea>
+        <button onclick="sendReply('Rahul Sharma')">Send Reply</button>
+      </div>
+
+      <div class="message-card">
+        <h3>Meeting Request from: Seema Verma</h3>
+        <p><strong>Date:</strong> 2025-06-22</p>
+        <p><strong>Time:</strong> 2:00 PM</p>
+        <p><strong>Location:</strong> Phoenix Mall, Pune</p>
+        <label for="reply2">Reply:</label>
+        <textarea id="reply2" placeholder="Type your response here..."></textarea>
+        <button onclick="sendReply('Seema Verma')">Send Reply</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Managed by Avinash Dahat – Live Freely Without Hesitation</p>
+  </footer>
+
+  <script>
+    function sendReply(userName) {
+      alert("Reply sent to " + userName + ". You will be able to chat from the dashboard soon.");
+    }
+  </script>
 </body>
 </html>
