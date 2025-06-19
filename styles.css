@@ -7,6 +7,7 @@ body {
   color: #333;
 }
 
+/* Header */
 header {
   background-color: #003366;
   color: white;
@@ -73,6 +74,7 @@ form label {
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 input[type="date"],
 input[type="time"],
 textarea,
@@ -106,7 +108,7 @@ button:hover {
   background-color: #003f7f;
 }
 
-/* Profile Cards */
+/* Profile Grid (used in profiles.html) */
 .profile-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -125,17 +127,6 @@ button:hover {
 .profile-card h4 {
   margin-top: 0;
   color: #00509e;
-}
-
-.profile-select {
-  margin-top: 2rem;
-}
-
-/* Privacy Note */
-form p {
-  font-size: 0.85rem;
-  color: #555;
-  margin-top: 10px;
 }
 
 /* Footer */
@@ -185,5 +176,9 @@ footer {
 
   form {
     padding: 1rem;
+  }
+
+  button {
+    width: 100%;
   }
 }
