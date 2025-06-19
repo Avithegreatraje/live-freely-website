@@ -1,126 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Panel - Live Freely Without Hesitation</title>
-  <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Live Freely Without Hesitation</title>
 
-  <!-- Google Verification -->
-  <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
+  <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Admin dashboard to manage Live Freely Without Hesitation - a matchmaking platform for singles and single parents." />
-  <meta name="keywords" content="admin, matchmaking, owner dashboard, profile moderation, meeting requests" />
-  <meta name="author" content="Avinash Dahat" />
-  <meta name="robots" content="noindex, nofollow" />
-  <meta property="og:title" content="Admin Panel - Live Freely Without Hesitation" />
-  <meta property="og:description" content="Owner dashboard to manage users, payments, and meetings." />
-  <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
-  <meta property="og:url" content="https://avithegreatraje.github.io/live-freely-website/admin_dashboard.html" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
+
+  <!-- SEO -->
+  <meta name="description" content="Admin dashboard for managing user activities, meetings, and approvals on Live Freely Without Hesitation." />
+  <meta name="keywords" content="admin dashboard, owner inbox, manage users, matchmaking site, Avinash Dahat" />
+  <meta name="author" content="Avinash Dahat" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://avithegreatraje.github.io/live-freely-website/admin_dashboard.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Admin Dashboard - Live Freely Without Hesitation" />
+  <meta property="og:description" content="Access all meeting requests and user data as the site owner." />
+  <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
+  <meta property="og:url" content="https://avithegreatraje.github.io/live-freely-website/admin_dashboard.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Admin Dashboard - Live Freely" />
+  <meta name="twitter:description" content="Secure dashboard for the owner of the matchmaking platform." />
+  <meta name="twitter:image" content="https://i.imgur.com/VyZQYtp.png" />
 </head>
 
 <body>
-  <header>
-    <img src="https://i.imgur.com/VyZQYtp.png" alt="Logo" class="logo" />
-    <h1>Admin Dashboard</h1>
-    <p>Logged in as <strong>Avinash Dahat (Owner)</strong></p>
-  </header>
+  <header>
+    <img src="https://i.imgur.com/VyZQYtp.png" alt="Site Logo" class="logo" />
+    <h1>Welcome, Avinash Dahat (Owner)</h1>
+    <p>You are logged in as administrator.</p>
+  </header>
 
-  <main>
-    <section class="admin-section">
-      <h2>Meeting Requests</h2>
-      <ul id="meetingRequests"></ul>
-    </section>
+  <main>
+    <section class="user-section">
+      <h2>Owner Tools</h2>
+      <ul>
+        <li><a href="owner-inbox.html">📥 View Meeting Requests</a></li>
+        <li><a href="profiles.html">🔍 View All Profiles</a></li>
+        <li><a href="payment.html">💰 Confirm Payments</a></li>
+        <li><a href="contact.html">📨 Urgent Contact Requests</a></li>
+        <li><a href="terms.html">📜 Terms & Conditions</a></li>
+      </ul>
+    </section>
 
-    <section class="admin-section">
-      <h2>Pending Video Call Approvals</h2>
-      <ul id="videoRequests"></ul>
-    </section>
+    <section class="user-section">
+      <h2>Admin Features Coming Soon</h2>
+      <p>🔐 You will soon be able to approve users, verify payments, moderate chats, and more from this dashboard.</p>
+    </section>
+  </main>
 
-    <section class="admin-section">
-      <h2>Registered Users</h2>
-      <ul id="userList"></ul>
-    </section>
-
-    <section class="admin-section">
-      <h2>Send Message to User</h2>
-      <input type="text" id="targetUser" placeholder="Enter user name" />
-      <textarea id="adminMessage" placeholder="Type your message here..."></textarea>
-      <button onclick="sendMessageToUser()">Send</button>
-    </section>
-
-    <section class="admin-section">
-      <h2>Verify Manual Payment</h2>
-      <p>Check UPI screenshot, name, amount, and plan duration from the user request.</p>
-      <p><strong>Email:</strong> avithegreatraje143@gmail.com</p>
-      <p><strong>Phone:</strong> 8888531094</p>
-      <p><strong>UPI ID:</strong> avinash@ybl</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>Live Freely Without Hesitation – Admin Panel by Avinash Dahat</p>
-  </footer>
-
-  <script>
-    const adminData = {
-      meetingRequests: [
-        { name: "Seema", date: "2025-06-21", time: "6 PM", place: "Cafe, Pune" },
-        { name: "Ravi", date: "2025-06-22", time: "5 PM", place: "Park, Delhi" }
-      ],
-      videoRequests: [
-        { from: "Nina", to: "Rohit", status: "Pending" },
-        { from: "Amit", to: "Pooja", status: "Pending" }
-      ],
-      users: [
-        { name: "Pooja", city: "Mumbai", paid: true },
-        { name: "Ravi", city: "Delhi", paid: false },
-        { name: "Seema", city: "Pune", paid: true }
-      ]
-    };
-
-    function populateLists() {
-      const meetingList = document.getElementById("meetingRequests");
-      adminData.meetingRequests.forEach(req => {
-        const li = document.createElement("li");
-        li.innerText = `${req.name} requested meeting on ${req.date}, ${req.time} at ${req.place}`;
-        meetingList.appendChild(li);
-      });
-
-      const videoList = document.getElementById("videoRequests");
-      adminData.videoRequests.forEach(v => {
-        const li = document.createElement("li");
-        li.innerText = `Video call request from ${v.from} to ${v.to} - Status: ${v.status}`;
-        videoList.appendChild(li);
-      });
-
-      const userList = document.getElementById("userList");
-      adminData.users.forEach(user => {
-        const li = document.createElement("li");
-        li.innerText = `${user.name} from ${user.city} - ${user.paid ? "Paid User" : "Free User"}`;
-        userList.appendChild(li);
-      });
-    }
-
-    function sendMessageToUser() {
-      const user = document.getElementById("targetUser").value;
-      const msg = document.getElementById("adminMessage").value;
-      if (!user || !msg.trim()) {
-        alert("Please fill out both user name and message.");
-        return;
-      }
-      alert(`Message sent to ${user}: "${msg}"`);
-      document.getElementById("targetUser").value = "";
-      document.getElementById("adminMessage").value = "";
-    }
-
-    window.onload = populateLists;
-  </script>
+  <footer>
+    <p>Live Freely Without Hesitation – Admin Control Panel</p>
+  </footer>
 </body>
 </html>
