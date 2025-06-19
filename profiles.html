@@ -1,97 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profiles - Live Freely Without Hesitation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO & Verification -->
-  <meta name="description" content="Browse profiles and request a meeting with someone you're interested in." />
-  <meta name="google-site-verification" content="Ccm4ti_Il3_-HmYwcXfZLzoMTgUgDwOvUAeuhOLV_dY" />
+  <title>Browse Profiles - Live Freely Without Hesitation</title>
+  <link rel="icon" href="https://i.imgur.com/VyZQYtp.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
 
-  <link rel="icon" href="https://i.imgur.com/lD0J0wF.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #e6f0ff;
-      margin: 0;
-      padding: 2rem;
-    }
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
 
-    .form-box {
-      background: white;
-      padding: 2rem;
-      max-width: 600px;
-      margin: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
+  <!-- SEO -->
+  <meta name="description" content="Browse verified user profiles on Live Freely Without Hesitation, India’s trusted matchmaking site for single parents and individuals." />
+  <meta name="keywords" content="profiles, matchmaking, single parents, find partner, dating" />
+  <meta name="author" content="Avinash Dahat" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://avithegreatraje.github.io/live-freely-website/profiles.html" />
 
-    h2 {
-      color: #003366;
-      text-align: center;
-    }
+  <!-- Open Graph -->
+  <meta property="og:title" content="Browse Profiles - Live Freely Without Hesitation" />
+  <meta property="og:description" content="View and connect with genuine profiles from all over India." />
+  <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
+  <meta property="og:url" content="https://avithegreatraje.github.io/live-freely-website/profiles.html" />
+  <meta property="og:type" content="website" />
 
-    input, select {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-
-    button {
-      width: 100%;
-      padding: 0.8rem;
-      background-color: #00509e;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #003366;
-    }
-  </style>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Browse Profiles - Live Freely" />
+  <meta name="twitter:description" content="Meet new people and find real connections across India." />
+  <meta name="twitter:image" content="https://i.imgur.com/VyZQYtp.png" />
 </head>
+
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-  <div class="form-box">
-    <h2>Request a Meeting</h2>
-    <form id="meetingForm">
-      <input type="text" id="userName" placeholder="Your Name" required />
-      <input type="text" id="userState" placeholder="Your State" required />
-      <input type="date" id="meetDate" required />
-      <input type="time" id="meetTime" required />
-      <input type="text" id="meetPlace" placeholder="Meeting Place" required />
-      <button type="submit">Submit Request</button>
-    </form>
-  </div>
+  <header>
+    <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely Logo" class="logo" />
+    <h1>Live Freely Without Hesitation</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="profiles.html" class="active">Browse Profiles</a>
+      <a href="schedule.html">Schedule Meeting</a>
+    </nav>
+  </header>
 
-  <script>
-    document.getElementById('meetingForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+  <main id="main">
+    <h2>Browse User Profiles</h2>
+    <div class="profile-grid">
+      <div class="profile-card">
+        <h4>Seema, 29</h4>
+        <p>City: Pune</p>
+        <p>Status: Single Parent</p>
+        <p>Gender: Female</p>
+        <p>Interest: Looking for companionship</p>
+        <button onclick="alert('Please log in to star profiles')">⭐ Star</button>
+      </div>
 
-      const request = {
-        name: document.getElementById('userName').value.trim(),
-        state: document.getElementById('userState').value.trim(),
-        date: document.getElementById('meetDate').value,
-        time: document.getElementById('meetTime').value,
-        place: document.getElementById('meetPlace').value.trim()
-      };
+      <div class="profile-card">
+        <h4>Ravi, 35</h4>
+        <p>City: Delhi</p>
+        <p>Status: Single</p>
+        <p>Gender: Male</p>
+        <p>Interest: Looking for marriage</p>
+        <button onclick="alert('Please log in to star profiles')">⭐ Star</button>
+      </div>
 
-      let requests = JSON.parse(localStorage.getItem('meetingRequests') || '[]');
-      requests.push(request);
-      localStorage.setItem('meetingRequests', JSON.stringify(requests));
+      <!-- More profiles can be added here -->
+    </div>
 
-      alert("Your meeting request has been sent!");
-      document.getElementById('meetingForm').reset();
-    });
-  </script>
+    <div class="profile-select">
+      <h3>Request a Meeting</h3>
+      <form onsubmit="sendMeetingRequest(event)">
+        <label for="fullName">Your Name:</label>
+        <input type="text" id="fullName" required />
 
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" required />
+
+        <label for="time">Preferred Time:</label>
+        <input type="time" id="time" required />
+
+        <label for="location">Preferred Location:</label>
+        <textarea id="location" required></textarea>
+
+        <button type="submit">Send Request</button>
+        <p>🔒 Your meeting preferences will only be sent to Avinash (owner).</p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Live Freely Without Hesitation — Managed by Avinash Dahat</p>
+  </footer>
+
+  <script>
+    function sendMeetingRequest(event) {
+      event.preventDefault();
+      alert("Your meeting request has been sent! Avinash will review and contact you soon.");
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
 </html>
