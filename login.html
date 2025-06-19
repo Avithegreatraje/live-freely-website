@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required Meta Tags -->
+  <!-- Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Title -->
   <title>Login - Live Freely Without Hesitation</title>
 
   <!-- Favicon -->
@@ -16,71 +14,86 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheet -->
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Google Site Verification -->
   <meta name="google-site-verification" content="sYRsRWsq1T6gsl6WwZyCF6nWExC-oc9bu84mUo2ksc0" />
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Login to Live Freely Without Hesitation - a matchmaking platform for singles, single parents, and those seeking meaningful friendships." />
-  <meta name="keywords" content="matchmaking login, single parents, live freely login, love, friendship" />
+  <!-- SEO Tags -->
+  <meta name="description" content="Login to Live Freely Without Hesitation - a matchmaking site for single parents, singles, and those seeking genuine connections." />
+  <meta name="keywords" content="login, single parent matchmaking, dating, friendship, Avinash Dahat" />
   <meta name="author" content="Avinash Dahat" />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://avithegreatraje.github.io/live-freely-website/login.html" />
 
-  <!-- Open Graph Tags -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Login - Live Freely Without Hesitation" />
-  <meta property="og:description" content="Access your account and start connecting on our matchmaking platform for genuine relationships." />
+  <meta property="og:description" content="Login to your account and connect with like-minded people. Safe, secure, and respectful." />
   <meta property="og:image" content="https://i.imgur.com/VyZQYtp.png" />
   <meta property="og:url" content="https://avithegreatraje.github.io/live-freely-website/login.html" />
+  <meta property="og:type" content="website" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Login - Live Freely Without Hesitation" />
+  <meta name="twitter:description" content="Login to your matchmaking profile or admin dashboard. Safe and secure." />
+  <meta name="twitter:image" content="https://i.imgur.com/VyZQYtp.png" />
 </head>
 
 <body>
   <header>
     <img src="https://i.imgur.com/VyZQYtp.png" alt="Live Freely Logo" class="logo" />
     <h1>Live Freely Without Hesitation</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="profiles.html">Browse Profiles</a>
+      <a href="login.html" class="active">Login</a>
+    </nav>
   </header>
 
-  <main style="text-align:center; margin-top:50px;">
-    <h2>Login to Your Account</h2>
-    <div style="margin-top:20px;">
-      <input type="text" id="loginId" placeholder="Email or Mobile Number" required style="padding:10px; margin:10px; width:250px;" />
-      <br/>
-      <input type="password" id="loginPassword" placeholder="Password" required style="padding:10px; margin:10px; width:250px;" />
-      <br/>
-      <button onclick="login()" style="padding:10px 20px; margin-top:10px;">Login</button>
-      <p id="loginMessage" style="color:red; margin-top:10px;"></p>
-    </div>
+  <main>
+    <section class="form-box">
+      <h2>Login to Your Account</h2>
+      <form onsubmit="handleLogin(event)">
+        <label for="loginId">Email or Mobile Number:</label>
+        <input type="text" id="loginId" placeholder="Enter Email or Phone" required />
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" placeholder="Enter Password" required />
+
+        <button type="submit">Login</button>
+        <p id="loginMessage" style="color: red; margin-top: 10px;"></p>
+      </form>
+    </section>
   </main>
 
   <footer>
-    <p style="margin-top:50px;">Owned and managed by Avinash Dahat</p>
+    <p>Owned and managed by Avinash Dahat</p>
   </footer>
 
   <script>
-    function login() {
+    function handleLogin(event) {
+      event.preventDefault();
+
       const id = document.getElementById("loginId").value.trim();
       const pass = document.getElementById("loginPassword").value.trim();
       const message = document.getElementById("loginMessage");
+
+      const ownerEmail = "avithegreatraje143@gmail.com";
+      const ownerPhone = "8888531094";
+      const ownerPassword = "admin@123";
 
       if (!id || !pass) {
         message.textContent = "Both fields are required.";
         return;
       }
 
-      // Owner login credentials
-      const ownerEmail = "avithegreatraje143@gmail.com";
-      const ownerPhone = "8888531094";
-      const ownerPassword = "admin@123";
-
       if ((id === ownerEmail || id === ownerPhone) && pass === ownerPassword) {
-        window.location.href = "admin.html";
+        window.location.href = "admin_dashboard.html";
       } else {
-        // Simulated user profile redirection
-        window.location.href = "profile.html";
+        window.location.href = "user_profile.html";
       }
     }
   </script>
